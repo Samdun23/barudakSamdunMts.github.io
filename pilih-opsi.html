@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+<title>Show Div Value</title>
+</head>
+<body>
+
+<div id="option1" onclick="setOption('option1')">Option 1</div>
+<div id="option2" onclick="setOption('option2')">Option 2</div>
+
+<button onclick="showSelectedValue()">Show Selected Value</button>
+
+<p id="displayValue"></p>
+
+<script>
+var selectedOption = ""; // variabel untuk menyimpan nilai div yang dipilih
+
+function setOption(option) {
+  // Mengatur warna teks div yang dipilih menjadi merah
+  document.getElementById(option).style.color = 'red';
+
+  // Mengatur ulang warna teks div yang tidak dipilih ke warna aslinya
+  if(option === 'option1') {
+    document.getElementById('option2').style.color = '';
+  } else {
+    document.getElementById('option1').style.color = '';
+  }
+
+  selectedOption = option; // mengatur nilai div yang dipilih ke dalam variabel
+}
+
+function showSelectedValue() {
+  document.getElementById('displayValue').innerText = "Selected Value: " + selectedOption;
+}
+</script>
+
+</body>
+</html>
